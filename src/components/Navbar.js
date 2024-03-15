@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from './Button.js'
 import "./Navbar.css";
-import Button from "./Button.js";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+
+  function handleClick() {
+    setClick(!click);
+  }
+  function closeMobileMenu() {
+    setClick(false);
+  }
   function isItClicked() {
     if (!click) {
       return "menu-icon fas fa-bars";
@@ -20,12 +27,6 @@ function Navbar() {
       return "nav-menu active";
     }
   }
-  function handleClick() {
-    setClick(!click);
-  }
-  function closeMobileMenu() {
-    setClick(false);
-  }
   function showButton() {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -36,6 +37,7 @@ function Navbar() {
   window.addEventListener('resize', showButton);
   return (
     <nav className="navbar">
+      <div className="navbar-container">
       <Link to="/" className="navbar-logo">
         <i class="fa-solid fa-location-dot"></i>TRVL
       </Link>
@@ -63,6 +65,7 @@ function Navbar() {
         </li>
       </ul>
       {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
+      </div>
     </nav>
   );
 }
