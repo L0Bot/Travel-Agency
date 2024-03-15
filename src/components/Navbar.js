@@ -29,15 +29,26 @@ function Navbar() {
       return "nav-menu active";
     }
   }
+  // function showButton() {
+  //   if (window.innerWidth <= 960) {
+  //     setButton(false);
+  //   } else {
+  //     setButton(true);
+  //   }
+  // }
+  // useEffect(() => {showButton()}, []);
+  // window.addEventListener('resize', showButton);
   function showButton() {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  }
-  useEffect(() => {showButton()}, []);
-  window.addEventListener('resize', showButton);
+    setButton(window.innerWidth > 960);
+  };
+  useEffect(() => {
+    showButton();
+    window.addEventListener('resize', showButton);
+    return () => {
+      window.removeEventListener('resize', showButton);
+    };
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -65,11 +76,11 @@ function Navbar() {
         </li>
         <li className="nav-item">
           <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-            Connection
+            Connexion
           </Link>
         </li>
       </ul>
-      {button && <Button buttonStyle='btn--outline'>Connection</Button>}
+      {button && <Button buttonStyle='btn--outline'>Connexion</Button>}
       </div>
     </nav>
   );
