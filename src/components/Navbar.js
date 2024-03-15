@@ -15,9 +15,9 @@ function Navbar() {
   }
   function isItClicked() {
     if (!click) {
-      return "menu-icon fas fa-bars";
+      return "fas fa-bars";
     } else {
-      return "menu-icon fas fa-times";
+      return "fas fa-times";
     }
   }
   function ImIActivated() {
@@ -41,7 +41,9 @@ function Navbar() {
       <Link to="/" className="navbar-logo">
         <i class="fa-solid fa-location-dot"></i>TRVL
       </Link>
-      <i className={isItClicked()} onClick={handleClick}></i>
+      <div className="menu-icon" onClick={handleClick}>
+      <i className={isItClicked()}></i>
+      </div>
       <ul className={ImIActivated()}>
         <li className="nav-item">
           <Link to="/" className="nav-links" onClick={closeMobileMenu}>
