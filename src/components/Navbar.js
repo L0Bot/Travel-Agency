@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Button from "./Button.js";
 
 function Navbar() {
   const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
   function isItClicked() {
     if (!click) {
       return "menu-icon fas fa-bars";
@@ -24,6 +26,14 @@ function Navbar() {
   function closeMobileMenu() {
     setClick(false);
   }
+  function showButton() {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  }
+  window.addEventListener('resize', showButton);
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo">
@@ -52,6 +62,7 @@ function Navbar() {
           </Link>
         </li>
       </ul>
+      {button && <Button buttonStyle='btn--outline'>Sign up</Button>}
     </nav>
   );
 }
