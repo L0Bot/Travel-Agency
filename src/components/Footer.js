@@ -46,7 +46,7 @@ function Footer() {
       <section className='social-media'>
         <div className="social-media-wrap">
           <div className="footer-logo">
-            <Link className="social-logo"><i className="fa-solid fa-location-dot"></i>TRVL</Link>
+            <Link className="social-logo"><i className="fa-solid fa-earth-americas"></i>TRVL</Link>
           </div>
           <small className="website-rights">TRVL &#169; 2024</small>
           <div className="social-icons">

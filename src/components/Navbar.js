@@ -29,15 +29,6 @@ function Navbar() {
       return "nav-menu active";
     }
   }
-  // function showButton() {
-  //   if (window.innerWidth <= 960) {
-  //     setButton(false);
-  //   } else {
-  //     setButton(true);
-  //   }
-  // }
-  // useEffect(() => {showButton()}, []);
-  // window.addEventListener('resize', showButton);
   function showButton() {
     setButton(window.innerWidth > 960);
   };
@@ -53,7 +44,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
       <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-        <i className="fa-solid fa-location-dot"></i>TRVL
+      <i className="fa-solid fa-earth-americas"></i>TRVL
       </Link>
       <div className="menu-icon" onClick={handleClick}>
       <i className={isItClicked()}></i>
