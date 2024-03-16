@@ -35,13 +35,6 @@ function Footer() {
         </div>
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
-            <h2>..........</h2>
-            <Link to='/'>..........</Link>
-            <Link to='/'>..........</Link>
-            <Link to='/'>..........</Link>
-            <Link to='/'>..........</Link>
-          </div>
-          <div className="footer-link-items">
             <h2>Réseaux Sociaux</h2>
             <Link to='/'>Instagram</Link>
             <Link to='/'>Facebook</Link>
